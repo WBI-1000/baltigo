@@ -1,0 +1,820 @@
+/* ==========================================================================
+   GERAL E VARIÁVEIS
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    --color-red: #FD0000;
+    --color-dark-red: #C90000;
+    --color-green: #23FE00;
+    --color-black: #000000;
+    --color-dark-gray: #000000; 
+    --color-light-gray: #1A1A1A;
+    --color-text: #FFFFFF;
+    --color-text-muted: #AFAFAF;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   BOTÕES
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-red {
+    background-color: var(--color-red);
+    color: var(--color-text);
+}
+
+.btn-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(253, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+.header {
+    background-color: var(--color-red);
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (PRINCIPAL)
+   ========================================================================== */
+.hero {
+    padding: 50px 20px;
+}
+
+.hero .logo {
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    background-image: linear-gradient(90deg, var(--color-red), var(--color-dark-red));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: var(--color-text-muted);
+}
+
+.hero .mockup {
+    max-width: 800px;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   SEÇÃO DE PLANOS (DESIGN FINAL CORRIGIDO)
+   ========================================================================== */
+.plans {
+    background-color: var(--color-dark-gray);
+    padding: 60px 0 80px 0;
+}
+
+.plans .container {
+    max-width: 1300px; /* Aumenta um pouco a largura máxima para dar mais espaço */
+}
+
+.plans-grid {
+    display: grid;
+    /* Força 4 colunas em telas grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    text-align: left;
+}
+
+.plan-card {
+    background-color: #150808;
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 2px solid var(--color-red);
+    display: flex;
+    flex-direction: column; /* Garante o alinhamento vertical */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(253, 0, 0, 0.3);
+}
+
+/* O conteúdo principal do card, que cresce para empurrar o resto para baixo */
+.plan-card .plan-card-content {
+    flex-grow: 1; 
+}
+
+.plan-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: var(--color-red);
+    text-transform: uppercase;
+}
+
+/* Lista de benefícios */
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    color: #ddd;
+}
+
+.plan-card ul li {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.plan-card ul li svg {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    fill: var(--color-red);
+    flex-shrink: 0;
+}
+
+/* Tag de desconto */
+.discount {
+    background-color: var(--color-red);
+    color: var(--color-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.discount svg {
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
+}
+
+/* Área do preço */
+.price-wrapper {
+    margin-bottom: 30px;
+}
+
+.price-label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0 0 5px 0;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-red);
+    margin: 0;
+    line-height: 1;
+}
+
+/* Botão de compra com animação */
+.btn-plan {
+    background-color: var(--color-red);
+    padding: 18px;
+    text-align: center;
+    display: block;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* CORREÇÃO DE CENTRALIZAÇÃO */
+    width: fit-content; /* Botão se ajusta ao texto */
+    margin: 0 auto;     /* Centraliza o botão */
+    padding-left: 40px;  /* Espaçamento interno */
+    padding-right: 40px; /* Espaçamento interno */
+}
+
+.btn-plan::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%) skewX(-25deg);
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    animation: shine 3s infinite linear;
+    animation-delay: 1s;
+}
+
+@keyframes shine {
+    100% { transform: translateX(100%) skewX(-25deg); }
+}
+
+
+/* Destaque para o plano recomendado */
+.plan-card.recommended {
+    background-color: #fff;
+    color: #333;
+    border-color: #fff;
+}
+
+.plan-card.recommended:hover {
+     box-shadow: 0 10px 30px rgba(255, 255, 255, 0.4);
+}
+
+.plan-card.recommended h3, .plan-card.recommended .price {
+    color: var(--color-red);
+}
+
+.plan-card.recommended ul {
+    color: #333;
+}
+
+.plan-card.recommended ul li svg {
+    fill: var(--color-red);
+}
+
+.plan-card.recommended .price-label {
+    color: #555;
+}
+
+/* Responsividade para a grade de planos */
+@media (max-width: 1220px) {
+    .plans-grid {
+        /* Em telas menores, os cards podem quebrar para 2 por linha */
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   SEÇÃO COMPARATIVO DE STREAMINGS (DESIGN ESCOLHIDO)
+   ========================================================================== */
+.streaming-comparativo {
+    background-color: var(--color-dark-gray);
+    padding: 60px 20px;
+}
+
+.streaming-comparativo h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.streaming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+/* Card inteiro (link) */
+.stream-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stream-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Parte de cima com a imagem de fundo e o logo */
+.card-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Camada escura sobre a imagem de fundo */
+.card-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1; 
+}
+
+/* Logo branco */
+.card-image-container img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: none;
+}
+
+/* Parte de baixo, branca, com as informações */
+.card-info {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Texto do preço */
+.card-info p {
+    color: var(--color-red);
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* IMAGENS DE FUNDO DOS CARDS */
+.stream-card:nth-of-type(1) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C1-1.webp');}
+.stream-card:nth-of-type(2) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C6.webp');}
+.stream-card:nth-of-type(3) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C4.webp');}
+.stream-card:nth-of-type(4) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C1-2.webp');}
+.stream-card:nth-of-type(5) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C7-1.webp');}
+.stream-card:nth-of-type(6) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C8.webp');}
+.stream-card:nth-of-type(7) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C10.webp');}
+.stream-card:nth-of-type(8) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/06/C9.webp');}
+.stream-card:nth-of-type(9) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/12/SKY.webp');}
+.stream-card:nth-of-type(10) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/12/PARAMOUNT.webp');}
+.stream-card:nth-of-type(11) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/12/CRUNCHROLL.webp');}
+.stream-card:nth-of-type(12) .card-image-container { background-image: url('https://oficialcineflick.com/wp-content/uploads/2024/12/CLARO-TV.webp');}
+
+
+/* CAIXAS DE TOTAL E DESTAQUE */
+.total-box {
+    background-color: var(--color-red);
+    color: white;
+    padding: 15px;
+    margin: 40px auto 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    max-width: 500px;
+}
+
+.baltigoflix-box {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-green);
+}
+
+.baltigoflix-box span {
+    font-size: 1.8rem;
+}
+
+
+/* ==========================================================================
+   OUTRAS SEÇÕES
+   ========================================================================== */
+.content-section img {
+    max-width: 100%;
+}
+
+.guarantee {
+    background-color: var(--color-dark-gray);
+}
+.guarantee-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.guarantee .text {
+    text-align: left;
+}
+.guarantee .text h2 {
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+.guarantee .text h2 span {
+      color: var(--color-red);
+}
+
+.scrolling-content {
+    background-color: var(--color-dark-gray);
+    padding: 40px 0;
+}
+
+.scroller {
+    max-width: 100%;
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-direction="right"] {
+    margin-top: 1.5rem; 
+}
+
+.scroller-inner {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: 60s linear infinite scroll-left;
+}
+
+.scroller[data-direction="right"] .scroller-inner {
+    animation-name: scroll-right;
+}
+
+.scroller:hover .scroller-inner {
+    animation-play-state: paused;
+}
+
+.scroller-inner img {
+    height: 240px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.scroller-inner img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 0.5rem * 7)); }
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(calc(-50% - 0.5rem * 7)); }
+    to { transform: translateX(0); }
+}
+
+.faq {
+    background-color: var(--color-black);
+}
+
+.faq-item {
+    background-color: var(--color-light-gray);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.faq-question span::after {
+    content: '+';
+    font-size: 2rem;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question span::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-answer p {
+    padding-bottom: 20px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer {
+    padding: 40px 20px;
+    background-color: var(--color-dark-gray);
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.footer p {
+    margin: 5px 0;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--color-red);
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   AJUSTES DE RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1220px) {
+    .plans-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .guarantee-content {
+        flex-direction: column;
+    }
+    .plan-card:hover {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 580px) {
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================================================
+   ESTILOS ADICIONAIS E CORREÇÕES PARA O TOPO DA PÁGINA
+   ========================================================================== */
+
+/* Ajusta a seção hero inteira com o fundo correto */
+.hero {
+    /* Cor de fundo base */
+    background-color: #181010;
+    /* Imagem de textura + Imagem de colagem de filmes */
+    background-image: url(imagens/low-contrast-linen.png), 
+                      url(imagens/8ec45d32c645c55928d598a2f39700d7.jpg);
+    background-blend-mode: overlay, soft-light;
+    background-size: auto, cover;
+    background-position: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de vinheta para escurecer as bordas */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 120px 40px rgba(0, 0, 0, 0.9);
+}
+
+/* Garante que o conteúdo fique na frente da vinheta */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* NOVO: Container para o layout de 2 colunas */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* NOVO: Coluna da esquerda (textos) e da direita (imagem) */
+.hero-text {
+    flex: 1;
+    text-align: left;
+    max-width: 550px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+/* CORREÇÕES para os estilos de .hero que já existiam */
+.hero .logo {
+    max-width: 280px;
+    margin: 0 0 25px 0; /* Remove margens automáticas */
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    text-align: left; /* Força o alinhamento à esquerda */
+    margin-bottom: 25px;
+}
+
+/* Remove o efeito de gradiente antigo do h1 */
+.hero h1 span {
+    background-image: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: inherit;
+}
+
+/* NOVO: Estilo para o texto em vermelho no título */
+.hero .highlight-red {
+    color: var(--color-red);
+}
+
+/* NOVO: Estilo para a caixa vermelha no título */
+.hero .highlight-box {
+    background-color: var(--color-red);
+    color: var(--color-text);
+    padding: 5px 12px;
+    border-radius: 8px;
+    display: inline-block; 
+}
+
+.hero p {
+    text-align: left;
+    margin: 0 0 35px 0; /* Remove a centralização */
+    max-width: 100%;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.hero .mockup {
+    max-width: 100%;
+    margin-top: 0; /* Remove a margem do topo */
+}
+
+/* NOVO: Estilos para a seção do slogan */
+.platform-slogan {
+    background-color: var(--color-dark-gray);
+    padding: 30px 20px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.platform-slogan h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-text);
+}
+
+
+/* CORREÇÃO na Responsividade */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column; /* Coloca a imagem embaixo do texto */
+        text-align: center;
+    }
+
+    .hero-text, .hero h1, .hero p {
+        text-align: center; /* Centraliza tudo em telas menores */
+    }
+
+    .hero p {
+        margin: 0 auto 35px; /* Centraliza o parágrafo novamente */
+        max-width: 600px;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+}
+
+/* ==========================================================================
+   ESTILOS DO SLIDER DE IMAGENS
+   ========================================================================== */
+.content-section {
+    padding-bottom: 60px;
+}
+
+/* O container principal do slider */
+.slider {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden; /* Essencial para esconder os outros slides */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* A faixa que contém todas as imagens */
+.slides {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out; /* A mágica da animação de slide */
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    vertical-align: top;
+}
+
+/* Estilo dos botões de Próximo/Anterior */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-btn svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+/* Estilo das bolinhas de navegação */
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--color-red);
+}
+
+
