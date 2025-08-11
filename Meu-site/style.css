@@ -1025,3 +1025,8 @@ padding-right: 15px;
         font-size: 1.2rem;
     }
 }
+
+/* Bloqueia a rolagem horizontal */
+body {
+    overflow-x: hidden;
+}
