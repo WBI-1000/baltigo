@@ -935,12 +935,73 @@ padding-left: 15px;
 padding-right: 15px;
 }
 
-@media (max-width: 400px) {
-.streaming-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas com a mesma largura */
-    gap: 15px; /* Ajuste o espaçamento entre os cards se necessário */
-    padding: 0 10px; /* Adiciona um pequeno padding lateral para não colar nas bordas */
-}
-}
+@media (max-width: 580px) {
+    /* Estilos para a seção de planos */
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
 
+    /* Estilos para a seção comparativa de streaming */
+    .streaming-comparativo {
+        padding: 20px 10px;
+    }
+    
+    .streaming-comparativo h2 {
+        font-size: 1.5rem;
+    }
+
+    .streaming-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Reduzindo o espaçamento entre os cards */
+    }
+
+    .stream-card {
+        background-color: white; /* Fundo branco para os cards */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box; /* Garante que padding e border não adicionem largura */
+        margin: 0;
+    }
+
+    .card-image-container {
+        position: relative;
+        height: 70px; /* Reduzindo a altura do contêiner da imagem */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-image-container img {
+        max-height: 40px; /* Reduzindo o tamanho do logo */
+        width: auto;
+        object-fit: contain;
+    }
+
+    .card-info {
+        padding: 8px 4px; /* Reduzindo o padding para caber mais conteúdo */
+        text-align: center;
+    }
+
+    .card-info p {
+        font-size: 0.75rem; /* Reduzindo o tamanho da fonte do preço */
+        font-weight: 700;
+        margin: 0;
+        color: var(--color-red);
+    }
+    
+    .total-box, .baltigoflix-box {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .baltigoflix-box span {
+        font-size: 1.2rem;
+    }
+}
