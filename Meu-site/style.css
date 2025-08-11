@@ -937,6 +937,10 @@ padding-right: 15px;
 
 @media (max-width: 400px) {
 .streaming-grid {
-grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Para telas ainda menores */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Força 3 colunas com a mesma largura */
+    gap: 15px; /* Ajuste o espaçamento entre os cards se necessário */
+    padding: 0 10px; /* Adiciona um pequeno padding lateral para não colar nas bordas */
 }
 }
+
