@@ -985,7 +985,7 @@ padding-right: 15px;
 }
 
 /* ==========================================================================
-   REGRAS ESPECÍFICAS PARA CELULAR (Layout 3x4 e correção de rolagem)
+   REGRAS ESPECÍFICAS PARA CELULAR (Layout 3x4 e correção de alinhamento)
    ========================================================================== */
 @media (max-width: 580px) {
 
@@ -994,16 +994,18 @@ padding-right: 15px;
         overflow-x: hidden;
     }
 
+    /* SEÇÃO DE PLANOS */
     .plans-grid {
         grid-template-columns: 1fr;
     }
     
     .plans .container {
-        padding: 20px 10px; /* Reduz padding lateral */
+        padding: 20px 10px;
     }
 
     .plan-card {
         padding: 25px 20px;
+        text-align: center;
     }
 
     .plan-card h3 {
@@ -1020,8 +1022,9 @@ padding-right: 15px;
 
     /* SEÇÃO COMPARATIVA DE STREAMING */
     .streaming-comparativo {
-        padding: 20px 10px; /* Reduz padding lateral */
+        padding: 20px 10px;
         background-color: var(--color-black);
+        text-align: center; /* Centraliza o título e outros textos */
     }
 
     .streaming-comparativo h2 {
@@ -1031,29 +1034,36 @@ padding-right: 15px;
 
     .streaming-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
-        margin: 0 auto; /* Centraliza a grade */
+        /* Centraliza a grade dentro do seu contêiner */
+        justify-content: center; 
+        max-width: 100%;
+        margin: 0 auto;
     }
     
     .stream-card {
-        background-color: var(--color-dark-gray); /* Fundo escuro do card */
-        border: 2px solid white; /* Borda branca */
+        background-color: white; /* Fundo branco do card */
+        border: 2px solid white;
         border-radius: 8px;
         overflow: hidden;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        justify-content: flex-end; /* Alinha o conteúdo na parte inferior */
     }
 
+    /* Garante que a imagem ocupe o espaço e esteja alinhada */
     .stream-card img {
         width: 100%;
         height: auto;
+        display: block;
         object-fit: cover;
     }
 
+    /* Centraliza o texto do preço */
     .stream-card p {
-        background-color: white; /* Fundo branco para o preço */
+        background-color: white;
         color: var(--color-red);
         font-weight: 700;
         font-size: 0.8rem;
@@ -1062,20 +1072,19 @@ padding-right: 15px;
         text-align: center;
     }
 
-    .total-box {
-        font-size: 1rem;
-        padding: 12px;
-        margin-top: 30px;
-    }
-    
-    .baltigoflix-box {
-        font-size: 1.2rem;
+    /* Caixas de total e destaque */
+    .total-box, .baltigoflix-box {
+        padding: 10px;
+        font-size: 0.9rem;
+        /* Centraliza as caixas */
+        margin: 30px auto 15px;
     }
     
     .baltigoflix-box span {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
+    /* OUTRAS SEÇÕES */
     .guarantee img {
         max-width: 250px;
     }
@@ -1085,9 +1094,8 @@ padding-right: 15px;
         box-sizing: border-box;
     }
     
-    /* Outras correções */
     .btn-plan {
-        padding: 15px 20px; /* Ajuste o padding do botão para mobile */
+        padding: 15px 20px;
     }
 }
 
@@ -1113,4 +1121,5 @@ padding-right: 15px;
 body {
     overflow-x: hidden;
 }
+
 
