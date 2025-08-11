@@ -818,12 +818,3 @@ body {
 }
 
 
-@media (max-width: 600px) {
-    .streaming-grid {
-        grid-template-columns: 1fr; /* 1 card por linha em telas pequenas */
-    }
-
-    .intro-text h2 {
-        font-size: 1em;
-    }
-}
