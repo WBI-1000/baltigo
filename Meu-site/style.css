@@ -936,97 +936,181 @@ padding-right: 15px;
 }
 
 /* ==========================================================================
-   AJUSTE DE RESPONSIVIDADE PARA O LAYOUT DESEJADO
+   REGRAS DE RESPONSIVIDADE PARA CELULAR (substituir o bloco existente)
    ========================================================================== */
-@media (max-width: 580px) {
-    /* Estilos para a seção comparativa de streaming */
-    .streaming-comparativo {
-        padding: 20px 10px;
-        background-color: #1a1a1a; /* Fundo escuro conforme a imagem */
+
+/* Regras que se aplicam a partir de telas com no máximo 1220px de largura */
+@media (max-width: 1220px) {
+    .plans-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Regras que se aplicam a partir de telas com no máximo 992px de largura */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column;
         text-align: center;
     }
+
+    .hero-text, .hero h1, .hero p {
+        text-align: center;
+    }
+
+    .hero .logo {
+        margin: 0 auto 25px auto;
+    }
+
+    .hero p {
+        margin: 0 auto 35px auto;
+        max-width: 600px;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+}
+
+/* Regras que se aplicam a partir de telas com no máximo 768px de largura */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .guarantee-content {
+        flex-direction: column;
+    }
+    .plan-card:hover {
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================================
+   REGRAS ESPECÍFICAS PARA CELULAR (Layout 3x4 e correção de rolagem)
+   ========================================================================== */
+@media (max-width: 580px) {
+
+    /* CORREÇÃO GLOBAL: Impede rolagem horizontal */
+    body {
+        overflow-x: hidden;
+    }
+
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
     
+    .plans .container {
+        padding: 20px 10px; /* Reduz padding lateral */
+    }
+
+    .plan-card {
+        padding: 25px 20px;
+    }
+
+    .plan-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .plan-card ul li {
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    /* SEÇÃO COMPARATIVA DE STREAMING */
+    .streaming-comparativo {
+        padding: 20px 10px; /* Reduz padding lateral */
+        background-color: var(--color-black);
+    }
+
     .streaming-comparativo h2 {
         font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
     .streaming-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Força 3 colunas */
         gap: 10px;
-        justify-content: center;
-        max-width: 100%;
-        margin: 0 auto;
+        margin: 0 auto; /* Centraliza a grade */
     }
-
+    
     .stream-card {
-        /* Borda branca e arredondamento */
-        border: 2px solid white;
+        background-color: var(--color-dark-gray); /* Fundo escuro do card */
+        border: 2px solid white; /* Borda branca */
         border-radius: 8px;
         overflow: hidden;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        box-sizing: border-box;
-        
-        /* Cor de fundo transparente para a imagem aparecer */
-        background-color: transparent; 
-        
-        /* Box shadow para um efeito sutil */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    /* O container da imagem não precisa de altura fixa para não cortar a imagem */
-    .card-image-container {
-        height: auto;
-        padding-top: 56.25%; /* Mantém a proporção 16:9 */
-        position: relative;
-        background-size: cover;
-        background-position: center;
-    }
-    
-    .card-image-container::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    /* O logo agora será a imagem de fundo */
-    .card-image-container img {
-        display: none;
-    }
-
-    .card-info {
-        padding: 8px 4px;
-        text-align: center;
-        background-color: rgba(0,0,0,0.7); /* Fundo semi-transparente para o texto */
-        position: absolute;
-        bottom: 0;
-        left: 0;
+    .stream-card img {
         width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
-    .card-info p {
-        font-size: 0.7rem; /* Reduzindo o tamanho da fonte do preço */
+    .stream-card p {
+        background-color: white; /* Fundo branco para o preço */
+        color: var(--color-red);
         font-weight: 700;
+        font-size: 0.8rem;
+        padding: 8px;
         margin: 0;
-        color: white; /* Cor branca para o texto */
+        text-align: center;
+    }
+
+    .total-box {
+        font-size: 1rem;
+        padding: 12px;
+        margin-top: 30px;
     }
     
-    .total-box, .baltigoflix-box {
-        padding: 10px;
+    .baltigoflix-box {
+        font-size: 1.2rem;
+    }
+    
+    .baltigoflix-box span {
+        font-size: 1.5rem;
+    }
+
+    .guarantee img {
+        max-width: 250px;
+    }
+    
+    .guarantee .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    /* Outras correções */
+    .btn-plan {
+        padding: 15px 20px; /* Ajuste o padding do botão para mobile */
+    }
+}
+
+/* Regras para telas ainda menores */
+@media (max-width: 420px) {
+    .streaming-comparativo h2 {
+        font-size: 1.2rem;
+    }
+    .stream-card p {
+        font-size: 0.7rem;
+    }
+    .total-box {
         font-size: 0.9rem;
-        margin: 30px auto 15px;
     }
-    
+    .baltigoflix-box {
+        font-size: 1rem;
+    }
     .baltigoflix-box span {
         font-size: 1.2rem;
     }
 }
-
 /* Bloqueia a rolagem horizontal */
 body {
     overflow-x: hidden;
 }
+
