@@ -943,7 +943,10 @@ padding-right: 15px;
 
     /* Estilos para a seção comparativa de streaming */
     .streaming-comparativo {
-        padding: 20px 10px;
+        /* Adiciona padding para evitar que o conteúdo encoste nas laterais */
+        padding: 20px;
+        /* Centraliza o título da seção */
+        text-align: center;
     }
     
     .streaming-comparativo h2 {
@@ -953,24 +956,28 @@ padding-right: 15px;
     .streaming-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* Reduzindo o espaçamento entre os cards */
+        gap: 10px;
+        /* Adicione essa linha para centralizar a grade horizontalmente */
+        justify-content: center;
+        /* Garante que a grade não ocupe mais que a largura do contêiner */
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .stream-card {
-        background-color: white; /* Fundo branco para os cards */
+        background-color: white;
         border-radius: 8px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        box-sizing: border-box; /* Garante que padding e border não adicionem largura */
-        margin: 0;
+        box-sizing: border-box;
     }
 
     .card-image-container {
         position: relative;
-        height: 70px; /* Reduzindo a altura do contêiner da imagem */
+        height: 70px;
         background-size: cover;
         background-position: center;
         display: flex;
@@ -978,19 +985,13 @@ padding-right: 15px;
         align-items: center;
     }
 
-    .card-image-container img {
-        max-height: 40px; /* Reduzindo o tamanho do logo */
-        width: auto;
-        object-fit: contain;
-    }
-
     .card-info {
-        padding: 8px 4px; /* Reduzindo o padding para caber mais conteúdo */
+        padding: 8px 4px;
         text-align: center;
     }
 
     .card-info p {
-        font-size: 0.75rem; /* Reduzindo o tamanho da fonte do preço */
+        font-size: 0.75rem;
         font-weight: 700;
         margin: 0;
         color: var(--color-red);
@@ -999,6 +1000,8 @@ padding-right: 15px;
     .total-box, .baltigoflix-box {
         padding: 10px;
         font-size: 0.9rem;
+        /* Centraliza as caixas de total e destaque */
+        margin: 30px auto 15px;
     }
     
     .baltigoflix-box span {
